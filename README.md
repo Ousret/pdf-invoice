@@ -3,12 +3,12 @@
 [![Travis Build Status](https://img.shields.io/travis/artkonekt/pdf-invoice.svg?style=flat-square)](https://travis-ci.org/artkonekt/pdf-invoice)
 [![Packagist Stable Version](https://img.shields.io/packagist/v/konekt/pdf-invoice.svg?style=flat-square&label=stable)](https://packagist.org/packages/konekt/pdf-invoice)
 [![Packagist downloads](https://img.shields.io/packagist/dt/konekt/pdf-invoice.svg?style=flat-square)](https://packagist.org/packages/konekt/pdf-invoice)
-[![GPL Software License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](LICENSE.md)
+[![GPL Software License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](LICENSE)
 
 This is a streamlined fork of [pdf-invoicr](https://github.com/farjadtahir/pdf-invoicr).
 
 Changes:
-- PHP 7.0 Support
+- PHP 7.X Support
 - PSR-4 compatible
 - Available as composer package
 - Dependencies are coming via composer
@@ -88,7 +88,7 @@ use Konekt\PdfInvoice\InvoicePrinter;
   $invoice->setFooternote("My Company Name Here");
   
   $invoice->render('example1.pdf','I'); 
-  /* I => Display on browser, D => Force Download, F => local path save, S => return document path */
+  /* I => Display on browser, D => Force Download, F => local path save, S => return document as string */
 ```
 
 ## Documentation
@@ -219,6 +219,14 @@ your company details are on the left.
 $invoice->flipflop();
 ```
 
+### Issuer and Client header titles
+
+Hide the issuer and client header row
+
+```php
+$invoice->hideToFromHeaders();
+```
+
 ### Adding Items
 
 Add a new product or service row to your document below the company and client information. PHP
@@ -238,6 +246,14 @@ may like) or a decimal if you want to show an amount instead (e.g. 50.00) If you
 discount just enter the boolean false in this field. Note: the final output will not show a discount
 column when all of the products haven't set a discount. total {decimal} A decimal for the total
 product or service price.
+
+### Item line description font size
+
+Change the font size for the product description. Default is 7
+
+```php
+$invoice->setFontSizeProductDescription(9);
+```
 
 ### Adding Totals
 
@@ -261,6 +277,16 @@ $invoice->addBadge($badge);
 ```
 
 badge {string} A string with the text of the badge.
+
+It is possible to set the color of the badge as the second parameter:
+
+```php
+$invoice->addBadge('Paid', '#00ff00');
+// Short hex variant is also supported
+$invoice->addBadge('Payment pending', '#f00');
+```
+
+> CSS color names ('red', 'cyan', 'fuchsia', etc) are **NOT supported**
 
 ### Add Title
 

@@ -1,6 +1,69 @@
 # Changelog
 
+## 1.5
+
+### 1.5.0
+##### 2019-12-19
+
+- It's possible to change the description font size
+- Added option to display the currency after the amount
+- Added option to display a price without space between the currency and amount
+- Table spacing fixes
+
+## 1.4
+
+### 1.4.0
+##### 2019-09-20
+
+- Added option to hide Issuer and Client header row
+- Changed: no longer printing empty FROM/TO lines
+- Change French 'Total' -> 'Total TTC'
+
+## 1.3
+
+### 1.3.1
+##### 2019-04-15
+
+- Dutch translation fix
+
+### 1.3.0
+##### 2019-02-14
+
+- Added support for setting badge color
+
+## 1.2 Series
+
+### 1.2.1
+##### 2018-12-28
+
+- Spanish translation fix
+
+### 1.2.0
+##### 2018-12-20
+
+- Lithuanian language support
+
 ## 1.1 Series
+
+### 1.1.5
+##### 2018-12-17
+
+- Added missing 'time' key in French
+
+### 1.1.4
+##### 2018-11-03
+
+- Fix wrong column number when having discount but not VAT.
+
+### 1.1.3
+##### 2018-10-17
+
+- Fixed missing `time` entry in German language file
+
+### 1.1.2
+##### 2018-10-02
+
+- Minor code and doc improvements
 
 ### 1.1.1
 ##### 2018-08-09
